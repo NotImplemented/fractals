@@ -57,7 +57,7 @@ def draw_julia(height, width, c_re, c_im, top, left, bottom, right, iterations, 
                 canvas[x, y] = np.array([0.0, (np.sin(92.0 * speed / steps) + 1.0) / 2.0 , 0.0])
             else:
                 gradient = (1.0 - steps / iterations)
-                canvas[x, y] = np.array([0.0, 0.0, gradient * gradient])
+                canvas[x, y] = np.array([0.0, 0.0, 1.0 / (1.0 + gradient)])
 
     plt.imshow(canvas)
     plt.show()
@@ -74,6 +74,6 @@ def contrast(x):
 # draw_mandelbrot(2048, 2048, -1.5, -2.2, 1.5, 0.8, 32)
 
 
-draw_julia(2048, 2048, -0.39054, -0.58679, -1.4, -1.4, 1.4, 1.4, 128)
+draw_julia(2048, 2048, -0.39054, -0.58679, -1.4, -1.4, 1.4, 1.4, 64)
 
 
