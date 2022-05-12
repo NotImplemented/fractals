@@ -1,1 +1,1 @@
-# fractals
+![Mandelbrot set](mandelbrot.png)
