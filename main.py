@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as img
 
+
 def draw_mandelbrot(height, width, top, left, bottom, right, iterations, threshold = 12.0):
     canvas = np.empty((height, width, 3))
     
@@ -27,9 +28,9 @@ def draw_mandelbrot(height, width, top, left, bottom, right, iterations, thresho
                 gradient = (1.0 - steps / iterations)
                 canvas[x, y] = np.array([gradient, gradient, 1.0])
 
-    plt.imshow(canvas)
-    plt.show()
-    img.imsave('mandelbrot.png', canvas)
+    #plt.imshow(canvas)
+    #plt.show()
+    plt.imsave('mandelbrot.png', canvas)
 
 
 def draw_julia(height, width, c_re, c_im, top, left, bottom, right, iterations, threshold = 12.0):
@@ -73,8 +74,8 @@ def contrast(x):
     return np.power(x, 4)
 
 
-# draw_mandelbrot(2048, 2048, -1.5, -2.2, 1.5, 0.8, 32)
+draw_mandelbrot(2048, 2048, -1.5, -2.2, 1.5, 0.8, 32)
 
-draw_julia(2048, 2048, -0.39054, -0.58679, -1.4, -1.4, 1.4, 1.4, 64)
+# draw_julia(2048, 2048, -0.39054, -0.58679, -1.4, -1.4, 1.4, 1.4, 64)
 
 
