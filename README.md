@@ -1,3 +1,5 @@
+# Simple visualizations for iterative systems
+
 ![Mandelbrot set](mandelbrot.png)
 Mandelbrot set for simple quadratic non-linearity. 
 
