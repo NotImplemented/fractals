@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import matplotlib.image as img
 
 def draw_mandelbrot(height, width, top, left, bottom, right, iterations, threshold = 12.0):
     canvas = np.empty((height, width, 3))
@@ -29,6 +29,7 @@ def draw_mandelbrot(height, width, top, left, bottom, right, iterations, thresho
 
     plt.imshow(canvas)
     plt.show()
+    img.imsave('mandelbrot.png', canvas)
 
 
 def draw_julia(height, width, c_re, c_im, top, left, bottom, right, iterations, threshold = 12.0):
@@ -61,6 +62,7 @@ def draw_julia(height, width, c_re, c_im, top, left, bottom, right, iterations, 
 
     plt.imshow(canvas)
     plt.show()
+    img.imsave('julia_siegel.png', canvas)
 
 
 def contrast_sigmoid(x):
@@ -72,7 +74,6 @@ def contrast(x):
 
 
 # draw_mandelbrot(2048, 2048, -1.5, -2.2, 1.5, 0.8, 32)
-
 
 draw_julia(2048, 2048, -0.39054, -0.58679, -1.4, -1.4, 1.4, 1.4, 64)
 
